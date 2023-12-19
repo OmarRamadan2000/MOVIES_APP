@@ -1,56 +1,59 @@
 import 'package:movie_app/features/Movies/domain/entities/now_playing_entity.dart';
 
-class NowPlayingModel extends NowPlayingEntity {
+class MovieModel extends NowPlayingEntity {
   bool? adult;
-  String backdropPath;
+  String? backdropPath;
   List<dynamic>? genreIds;
   int id;
   String? originalLanguage;
   String? originalTitle;
-  String? overview;
+  String overview;
   double? popularity;
   String? posterPath;
-  String? releaseDate;
+  String releaseDate;
   String title;
   bool? video;
-  double? voteAverage;
+  double voteAverage;
   int? voteCount;
 
-  NowPlayingModel({
+  MovieModel({
     this.adult,
-    this.backdropPath = '',
+    this.backdropPath,
     this.genreIds,
     this.id = 0,
     this.originalLanguage,
     this.originalTitle,
-    this.overview,
+    this.overview = "Not found overview",
     this.popularity,
     this.posterPath,
-    this.releaseDate,
+    this.releaseDate = 'Not found release Date',
     this.title = "",
     this.video,
-    this.voteAverage,
+    this.voteAverage = 0.0,
     this.voteCount,
   }) : super(
             backdrop_path: backdropPath,
             idNowPlaying: id,
-            titleNowPlaying: title);
+            titleNowPlaying: title,
+            overviewMovie: overview,
+            rate: voteAverage,
+            releaseYear: releaseDate);
 
-  factory NowPlayingModel.fromJson(Map<String, dynamic> json) {
-    return NowPlayingModel(
+  factory MovieModel.fromJson(Map<String, dynamic> json) {
+    return MovieModel(
       adult: json['adult'] as bool?,
-      backdropPath: json['backdrop_path'] as String,
+      backdropPath: json['backdrop_path'] as String?,
       genreIds: json['genre_ids'] as List<dynamic>?,
       id: json['id'] as int,
       originalLanguage: json['original_language'] as String?,
       originalTitle: json['original_title'] as String?,
-      overview: json['overview'] as String?,
+      overview: json['overview'] as String,
       popularity: (json['popularity'] as num?)?.toDouble(),
       posterPath: json['poster_path'] as String?,
-      releaseDate: json['release_date'] as String?,
+      releaseDate: json['release_date'] as String,
       title: json['title'] as String,
       video: json['video'] as bool?,
-      voteAverage: (json['vote_average'] as num?)?.toDouble(),
+      voteAverage: (json['vote_average'] as num).toDouble(),
       voteCount: json['vote_count'] as int?,
     );
   }
