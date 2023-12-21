@@ -1,12 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:movie_app/features/Movies/domain/entities/now_playing_entity.dart';
+import 'package:movie_app/features/Movies/domain/entities/movie_entity.dart';
 import 'package:movie_app/features/Movies/domain/use_cases/movie_usecase.dart';
 
 part 'movie_state.dart';
 
-class MovieCubit extends Cubit<MovieState> {
-  MovieCubit(this.nowPlayingUseCase) : super(MovieInitial());
+class NowPlayingCubit extends Cubit<MovieState> {
+  NowPlayingCubit(this.nowPlayingUseCase) : super(MovieInitial());
   final MovieUseCase nowPlayingUseCase;
 
   Future<void> getNowPlaying() async {

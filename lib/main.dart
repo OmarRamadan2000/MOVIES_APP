@@ -8,9 +8,9 @@ import 'package:movie_app/core/utils/blocObserver.dart';
 import 'package:movie_app/features/Movies/data/data_sources/movie_remote_data_source.dart';
 import 'package:movie_app/features/Movies/data/repositories_impl/movie_repo_impl.dart';
 import 'package:movie_app/features/Movies/domain/use_cases/movie_usecase.dart';
-import 'package:movie_app/features/Movies/presentation/blocs/now%20playing/cubit/movie_cubit.dart';
-import 'package:movie_app/features/Movies/presentation/blocs/popular/cubit/popular_cubit.dart';
-import 'package:movie_app/features/Movies/presentation/blocs/top%20rated/cubit/top_rated_cubit.dart';
+import 'package:movie_app/features/Movies/presentation/blocs/Movie%20part/now%20playing/cubit/movie_cubit.dart';
+import 'package:movie_app/features/Movies/presentation/blocs/Movie%20part/popular/cubit/popular_cubit.dart';
+import 'package:movie_app/features/Movies/presentation/blocs/Movie%20part/top%20rated/cubit/top_rated_cubit.dart';
 import 'package:movie_app/features/Movies/presentation/pages/home.dart';
 
 void main() {
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) {
-          return MovieCubit(
+          return NowPlayingCubit(
             MovieUseCase(
               MovieRepoImpl(
                 MovieRemoteDataSourceImpl(

@@ -14,7 +14,6 @@ final class NowPlayingFailure extends MovieState {
 }
 
 final class NowPlayingsuccess extends MovieState {
-  final List<NowPlayingEntity> movies;
-
+  final List<MovieEntity> movies;
   NowPlayingsuccess(this.movies);
 }

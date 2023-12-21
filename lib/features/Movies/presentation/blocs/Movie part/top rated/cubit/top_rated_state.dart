@@ -14,7 +14,7 @@ final class TopRatedFailure extends TopRatedState {
 }
 
 final class TopRatedsuccess extends TopRatedState {
-  final List<NowPlayingEntity> topRatedMovies;
+  final List<MovieEntity> topRatedMovies;
 
   TopRatedsuccess(this.topRatedMovies);
 }

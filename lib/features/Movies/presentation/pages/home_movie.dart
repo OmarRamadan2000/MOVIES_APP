@@ -1,12 +1,19 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/core/api/api_service.dart';
 import 'package:movie_app/core/utils/app_colors.dart';
-import 'package:movie_app/features/Movies/domain/entities/now_playing_entity.dart';
-import 'package:movie_app/features/Movies/presentation/blocs/now%20playing/cubit/movie_cubit.dart';
-import 'package:movie_app/features/Movies/presentation/blocs/popular/cubit/popular_cubit.dart';
-import 'package:movie_app/features/Movies/presentation/blocs/top%20rated/cubit/top_rated_cubit.dart';
+import 'package:movie_app/features/Movies/data/data_sources/movie_remote_data_source.dart';
+import 'package:movie_app/features/Movies/data/repositories_impl/movie_repo_impl.dart';
+import 'package:movie_app/features/Movies/domain/entities/movie_entity.dart';
+import 'package:movie_app/features/Movies/domain/use_cases/movie_usecase.dart';
+import 'package:movie_app/features/Movies/presentation/blocs/Movie%20part/now%20playing/cubit/movie_cubit.dart';
+import 'package:movie_app/features/Movies/presentation/blocs/Movie%20part/popular/cubit/popular_cubit.dart';
+import 'package:movie_app/features/Movies/presentation/blocs/Movie%20part/similar/cubit/similar_cubit.dart';
+import 'package:movie_app/features/Movies/presentation/blocs/Movie%20part/top%20rated/cubit/top_rated_cubit.dart';
+import 'package:movie_app/features/Movies/presentation/widgets/component.dart';
 import 'package:movie_app/features/Movies/presentation/widgets/horizntal_cards.dart';
 import 'package:movie_app/features/Movies/presentation/widgets/now_playing.dart';
 
@@ -47,11 +54,14 @@ class BuildNowPlayingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: avoid_types_as_parameter_names
-    return BlocBuilder<MovieCubit, MovieState>(builder: (context, state) {
+    return BlocBuilder<NowPlayingCubit, MovieState>(builder: (context, state) {
       if (state is NowPlayingsuccess) {
-        final List<NowPlayingEntity> movies = state.movies;
+        final List<MovieEntity> movies = state.movies;
+        movies.removeWhere((element) => element.backdrop_path == null);
         return NowPlayingWidget(
+          live: 'NOW PLAYING',
           movie: movies,
+          isMovie: true,
         );
       }
       if (state is NowPlayingFailure) {
@@ -73,10 +83,12 @@ class BuildPopularWidget extends StatelessWidget {
     // ignore: avoid_types_as_parameter_names
     return BlocBuilder<PopularCubit, PopularState>(builder: (context, state) {
       if (state is Popularsuccess) {
-        final List<NowPlayingEntity> movies = state.popularmovies;
+        final List<MovieEntity> movies = state.popularmovies;
+        movies.removeWhere((element) => element.backdrop_path == null);
         return HorizntalCards(
           movie: movies,
           cateName: "Popular",
+          isMovie: true,
         );
       }
       if (state is PopularFailure) {
@@ -97,10 +109,12 @@ class BuildTopRatedWidget extends StatelessWidget {
     // ignore: avoid_types_as_parameter_names
     return BlocBuilder<TopRatedCubit, TopRatedState>(builder: (context, state) {
       if (state is TopRatedsuccess) {
-        final List<NowPlayingEntity> movies = state.topRatedMovies;
+        final List<MovieEntity> movies = state.topRatedMovies;
+        movies.removeWhere((element) => element.backdrop_path == null);
         return HorizntalCards(
           movie: movies,
           cateName: "Top Rated",
+          isMovie: true,
         );
       }
       if (state is TopRatedFailure) {
@@ -110,5 +124,44 @@ class BuildTopRatedWidget extends StatelessWidget {
             height: 130, child: Center(child: CircularProgressIndicator()));
       }
     });
+  }
+}
+
+class BulidSimilarMovie extends StatelessWidget {
+  const BulidSimilarMovie(
+      {super.key, required this.movieId, required this.isMovie});
+  final int movieId;
+  final bool isMovie;
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => SimilarCubit(
+        MovieUseCase(
+          MovieRepoImpl(
+            MovieRemoteDataSourceImpl(
+                ApiService(Dio()), "/movie/$movieId/similar"),
+          ),
+        ),
+      )..getSimilar(),
+      child: BlocConsumer<SimilarCubit, SimilarState>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          if (state is Similarsuccess) {
+            final List<MovieEntity> movies = state.similarmovies;
+            movies.removeWhere((element) => element.posterTv == null);
+            return GridImage(
+              movies: movies,
+              isMovie: isMovie,
+            );
+          }
+          if (state is SimilarFailure) {
+            return Text(state.errMessage);
+          } else {
+            return const SizedBox(
+                height: 130, child: Center(child: CircularProgressIndicator()));
+          }
+        },
+      ),
+    );
   }
 }

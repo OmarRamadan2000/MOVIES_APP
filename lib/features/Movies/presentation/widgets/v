@@ -1,0 +1,418 @@
+{
+    "page": 1,
+    "results": [
+      {
+        "adult": false,
+        "backdrop_path": "/jWXrQstj7p3Wl5MfYWY6IHqRpDb.jpg",
+        "genre_ids": [
+          10763
+        ],
+        "id": 94722,
+        "origin_country": [
+          "DE"
+        ],
+        "original_language": "de",
+        "original_name": "Tagesschau",
+        "overview": "German daily news program, the oldest still existing program on German television.",
+        "popularity": 3418.001,
+        "poster_path": "/7dFZJ2ZJJdcmkp05B9NWlqTJ5tq.jpg",
+        "first_air_date": "1952-12-26",
+        "name": "Tagesschau",
+        "vote_average": 6.9,
+        "vote_count": 190
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/218ZehBKlH8efPRRccmB7bu0oLQ.jpg",
+        "genre_ids": [
+          35,
+          9648,
+          10766,
+          18
+        ],
+        "id": 219109,
+        "origin_country": [
+          "BR"
+        ],
+        "original_language": "pt",
+        "original_name": "Elas por Elas",
+        "overview": "Seven friends who met in their youth at an English course meet again 25 years later; Lara, Taís, Helena, Adriana, Renée, Natália and Carol, each of them has a different personality and origin, but they share a deep affection.",
+        "popularity": 3311.863,
+        "poster_path": "/m0cvvnhnRXdQhLARx7qt9lz7hTE.jpg",
+        "first_air_date": "2023-09-25",
+        "name": "Elas por Elas",
+        "vote_average": 5.591,
+        "vote_count": 33
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/nNnNN7qN1Pd0ZCc3OrMhCADywGk.jpg",
+        "genre_ids": [
+          10764
+        ],
+        "id": 225553,
+        "origin_country": [
+          "CL"
+        ],
+        "original_language": "es",
+        "original_name": "Gran hermano",
+        "overview": "",
+        "popularity": 2692.079,
+        "poster_path": "/A4MmFM6NlrsexPccslCZzqv8HsD.jpg",
+        "first_air_date": "2023-06-18",
+        "name": "Gran hermano",
+        "vote_average": 0,
+        "vote_count": 0
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/9TXcHOeCsM8W3ZKKIKjdYUsRSeq.jpg",
+        "genre_ids": [
+          80,
+          18
+        ],
+        "id": 72879,
+        "origin_country": [
+          "FR"
+        ],
+        "original_language": "fr",
+        "original_name": "Demain nous appartient",
+        "overview": "The story revolves around the people of Sète, France. Their lives are punctuated by family rivalries, romance and scenes from daily life, but also by plots involving police investigations, secrets and betrayals.",
+        "popularity": 2418.65,
+        "poster_path": "/3uU5uJzOX7xe7mn7YKpBM9oiEZO.jpg",
+        "first_air_date": "2017-07-17",
+        "name": "Tomorrow Is Ours",
+        "vote_average": 6.1,
+        "vote_count": 47
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/2GflJk6Hm1L3FFVWIvnuOskDFGv.jpg",
+        "genre_ids": [
+          18,
+          9648
+        ],
+        "id": 226773,
+        "origin_country": [
+          "PH"
+        ],
+        "original_language": "tl",
+        "original_name": "Senior High",
+        "overview": "A student’s death causes a scandal at the prestigious Northford High. Investigations conclude it was a suicide. The victim’s twin sister thinks otherwise. As she searches for truth, she will unravel secrets that are far more shocking and dangerous.",
+        "popularity": 2414.282,
+        "poster_path": "/k285iD6gZIoLsVSczSjc4WIXkdc.jpg",
+        "first_air_date": "2023-08-28",
+        "name": "Senior High",
+        "vote_average": 7.75,
+        "vote_count": 8
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/eWF3oRyL4QWaidN9F4uvM7cBJUV.jpg",
+        "genre_ids": [
+          10766
+        ],
+        "id": 206559,
+        "origin_country": [
+          "ZA"
+        ],
+        "original_language": "af",
+        "original_name": "Binnelanders",
+        "overview": "A South African Afrikaans soap opera. It is set in and around the fictional private hospital, Binneland Kliniek, in Pretoria, and the storyline follows the trials, trauma and tribulations of the staff and patients of the hospital.",
+        "popularity": 2216.987,
+        "poster_path": "/v9nGSRx5lFz6KEgfmgHJMSgaARC.jpg",
+        "first_air_date": "2005-10-13",
+        "name": "Binnelanders",
+        "vote_average": 5.4,
+        "vote_count": 19
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/4W2sH4CXzJ98ScuLGRij1KakzSv.jpg",
+        "genre_ids": [
+          10751,
+          35
+        ],
+        "id": 230525,
+        "origin_country": [
+          "KR"
+        ],
+        "original_language": "ko",
+        "original_name": "우당탕탕 패밀리",
+        "overview": "A romantic family drama about a divorced couple who broke up 30 years ago out of hate, reuniting as in-laws through their children and overcoming long overdue conflicts and enmity.",
+        "popularity": 2181.808,
+        "poster_path": "/goMzJ6rxTndGki2pKpyAKuKNXHY.jpg",
+        "first_air_date": "2023-09-18",
+        "name": "Unpredictable Family",
+        "vote_average": 7,
+        "vote_count": 4
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/pVNViTEtGhsQM4tmuyZRNQssLwh.jpg",
+        "genre_ids": [
+          10764
+        ],
+        "id": 12513,
+        "origin_country": [
+          "ES"
+        ],
+        "original_language": "es",
+        "original_name": "Operación Triunfo",
+        "overview": "Reality-show talent contest aimed to find the country's next solo singing sensation, putting a selection of hopefuls through their paces by getting them to sing a variety of cover versions of popular songs, with tutoring from various professionals.",
+        "popularity": 2158.689,
+        "poster_path": "/8Qfq22zP5PeUKJfN5bFPFJtJz5i.jpg",
+        "first_air_date": "2001-10-22",
+        "name": "Operación Triunfo",
+        "vote_average": 5.7,
+        "vote_count": 12
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/aWPhMZ0P2DyfWB7k5NXhGHSZHGC.jpg",
+        "genre_ids": [
+          18,
+          80,
+          10766
+        ],
+        "id": 209265,
+        "origin_country": [
+          "BR"
+        ],
+        "original_language": "pt",
+        "original_name": "Terra e Paixão",
+        "overview": "When her husband is killed in a land grabbing attempt, Aline takes charge of cultivating his land and protecting his family. Facing the powerful Antonio La Selva, responsible for the death of her husband and the largest landowner in the region, Aline is determined to keep possession of her land and invest in its production. However, she didn't expect that she would fall in love with Daniel, son of her rival, who is at odds with his rebellious half-brother, Caio, who, in turn, also falls in love with the girl. In the interior of Brazil, Aline will have to fight two battles: the dispute for her lands and for her heart.",
+        "popularity": 2098.962,
+        "poster_path": "/33HrrOZQKRp7W3dNXPmKB0udA2m.jpg",
+        "first_air_date": "2023-05-08",
+        "name": "Land of Desire",
+        "vote_average": 6.451,
+        "vote_count": 133
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/hwUQsL1cWt0bmbTxzCompqqvTH9.jpg",
+        "genre_ids": [
+          10764
+        ],
+        "id": 82250,
+        "origin_country": [
+          "ES"
+        ],
+        "original_language": "es",
+        "original_name": "Gran hermano VIP",
+        "overview": "",
+        "popularity": 2094.014,
+        "poster_path": "/9269PATr0bmEXKjkpR88mzGmNYI.jpg",
+        "first_air_date": "2004-01-22",
+        "name": "Gran hermano VIP",
+        "vote_average": 4.094,
+        "vote_count": 16
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/46PJ9taXITt1aXPZTMJXpBw5MlU.jpg",
+        "genre_ids": [],
+        "id": 232937,
+        "origin_country": [
+          "MX"
+        ],
+        "original_language": "es",
+        "original_name": "Minas de Pasión",
+        "overview": "Emilia a single mother who works in a mine fall in love with Leonardo the son of Roberta Castro the most powerful of the people. Roberta will seek revenge on Emilia by making her life miserable.",
+        "popularity": 2090.741,
+        "poster_path": "/lLJBisfhikqTD0Cj9a2ZJw5kyOe.jpg",
+        "first_air_date": "2023-08-21",
+        "name": "Minas de Pasión",
+        "vote_average": 7.625,
+        "vote_count": 32
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/gMMnf8VRg3Z98WaFmOLr9Jk8pIs.jpg",
+        "genre_ids": [
+          35,
+          10767
+        ],
+        "id": 63770,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "The Late Show with Stephen Colbert",
+        "overview": "Stephen Colbert brings his signature satire and comedy to The Late Show with Stephen Colbert, the #1 show in late night, where he talks with an eclectic mix of guests about what is new and relevant in the worlds of politics, entertainment, business, music, technology, and more. Featuring bandleader Jon Batiste with his band Stay Human, the Emmy Award-nominated show is broadcast from the historic Ed Sullivan Theater. Stephen Colbert, Chris Licht, Tom Purcell, and Jon Stewart are executive producers. Barry Julien and Denise Rehrig serve as co-executive producers.",
+        "popularity": 2017.942,
+        "poster_path": "/9jkThAGYj2yp8jsS6Nriy5mzKFT.jpg",
+        "first_air_date": "2015-09-08",
+        "name": "The Late Show with Stephen Colbert",
+        "vote_average": 6.5,
+        "vote_count": 216
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/5AkPhazx8F0Ht74CUdJU03vNzBi.jpg",
+        "genre_ids": [
+          10767
+        ],
+        "id": 61818,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Late Night with Seth Meyers",
+        "overview": "Seth Meyers, who is \"Saturday Night Live’s\" longest serving anchor on the show’s wildly popular \"Weekend Update,\" takes over as host of NBC’s \"Late Night\" — home to A-list celebrity guests, memorable comedy and the best in musical talent. As the Emmy Award-winning head writer for \"SNL,\" Meyers has established a reputation for sharp wit and perfectly timed comedy, and has gained fame for his spot-on jokes and satire. Meyers takes his departure from \"SNL\" to his new post at \"Late Night,\" as Jimmy Fallon moves to \"The Tonight Show\".",
+        "popularity": 2015.885,
+        "poster_path": "/x5asOuPOjW21e0Ykkvkuzu1TGEl.jpg",
+        "first_air_date": "2014-02-25",
+        "name": "Late Night with Seth Meyers",
+        "vote_average": 5.5,
+        "vote_count": 53
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/vjfgA2G6o5pcmFegzX6HVUSUIUT.jpg",
+        "genre_ids": [
+          10751,
+          10762
+        ],
+        "id": 68913,
+        "origin_country": [
+          "NO"
+        ],
+        "original_language": "no",
+        "original_name": "Snøfall",
+        "overview": "Selma, a 9 year old girl who lost her parents in an accident, is now living with Ruth, a quite strict neighbour who was just supposed to temporarily look after Selma and her dog Casper.",
+        "popularity": 2005.205,
+        "poster_path": "/k9n1CAFyhf6IgSCNqTFOC1OEctE.jpg",
+        "first_air_date": "2016-12-01",
+        "name": "Snowfall",
+        "vote_average": 5.588,
+        "vote_count": 17
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/rj3jBAZwPiOgkwAy1205MAgLahj.jpg",
+        "genre_ids": [
+          10766
+        ],
+        "id": 81329,
+        "origin_country": [
+          "FR"
+        ],
+        "original_language": "fr",
+        "original_name": "Un si grand soleil",
+        "overview": "",
+        "popularity": 1990.866,
+        "poster_path": "/t6jVlbPMtZOJoAOfeoR4yQmnjXM.jpg",
+        "first_air_date": "2018-08-27",
+        "name": "Chronicles of the Sun",
+        "vote_average": 7.4,
+        "vote_count": 52
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/re8j3GRC3KoHQe9i46V3ZZwZ2tI.jpg",
+        "genre_ids": [
+          10751
+        ],
+        "id": 234925,
+        "origin_country": [
+          "SE"
+        ],
+        "original_language": "sv",
+        "original_name": "Trolltider – legenden om Bergatrollet",
+        "overview": "Trolltider – the legend of the Bergatrollet is SVT's Christmas calendar 2023, directed by Lisa Farzaneh from a script by Ola Norén and Roland Ulvselius. The series is a \"reboot\" to SVT's Christmas calendar Trolltider from 1979 with partly the same characters but a new story.",
+        "popularity": 1974.994,
+        "poster_path": "/zIamr0V8csrz0NSwkYwSBgw1rwd.jpg",
+        "first_air_date": "2023-12-01",
+        "name": "Trolltider – legenden om Bergatrollet",
+        "vote_average": 0,
+        "vote_count": 0
+      },
+      {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+          18,
+          35
+        ],
+        "id": 36361,
+        "origin_country": [
+          "CZ"
+        ],
+        "original_language": "cs",
+        "original_name": "Ulice",
+        "overview": "Ulice is a Czech soap opera produced and broadcast by Nova. In the Czech language Ulice means street.\n\nThe show describes the lives of the Farský, Jordán, Boháč, Nikl, and Liška families and many other people that live in Prague. Their daily battle against real problems of living in a modern world like divorce, love, betrayal and illness or disease. Ulice often shows crime.",
+        "popularity": 1967.441,
+        "poster_path": "/3ayWL13P1HeRnyVL9lU9flOdZjq.jpg",
+        "first_air_date": "2005-09-05",
+        "name": "Ulice",
+        "vote_average": 2.5,
+        "vote_count": 16
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/oOce9hLMVFubjAJliau4kiSNPnW.jpg",
+        "genre_ids": [
+          80,
+          18
+        ],
+        "id": 549,
+        "origin_country": [
+          "US"
+        ],
+        "original_language": "en",
+        "original_name": "Law & Order",
+        "overview": "In cases ripped from the headlines, police investigate serious and often deadly crimes, weighing the evidence and questioning the suspects until someone is taken into custody. The district attorney's office then builds a case to convict the perpetrator by proving the person guilty beyond a reasonable doubt. Working together, these expert teams navigate all sides of the complex criminal justice system to make New York a safer place.",
+        "popularity": 1939.906,
+        "poster_path": "/77OPlbsvX3pzoFbyfpcE3GXMCod.jpg",
+        "first_air_date": "1990-09-13",
+        "name": "Law & Order",
+        "vote_average": 7.422,
+        "vote_count": 488
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/5S0SI4NjyMji05OPL0GOZ4BsiMh.jpg",
+        "genre_ids": [
+          10764
+        ],
+        "id": 136166,
+        "origin_country": [
+          "NL"
+        ],
+        "original_language": "nl",
+        "original_name": "Lang Leve de Liefde",
+        "overview": "",
+        "popularity": 1916.054,
+        "poster_path": "/9lpvvzEl5kViIc2vUJG4QKzj2ds.jpg",
+        "first_air_date": "2020-01-20",
+        "name": "Lang Leve de Liefde",
+        "vote_average": 6,
+        "vote_count": 0
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/pEJL28C17jVPCwUipGO0JdTUobO.jpg",
+        "genre_ids": [
+          35,
+          10766
+        ],
+        "id": 213026,
+        "origin_country": [
+          "BR"
+        ],
+        "original_language": "pt",
+        "original_name": "Fuzuê",
+        "overview": "The department store Fuzue, specialized in popular items, is a success led by Nero Braga e Silva. Little does he know that the store's grounds have hidden relics for over 300 years.",
+        "popularity": 1901.649,
+        "poster_path": "/zNNFg8z3z7uT817n6M0kHRcYwq1.jpg",
+        "first_air_date": "2023-08-14",
+        "name": "Fuzue",
+        "vote_average": 5.636,
+        "vote_count": 22
+      }
+    ],
+    "total_pages": 8057,
+    "total_results": 161123
+  }

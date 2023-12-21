@@ -14,7 +14,7 @@ final class PopularFailure extends PopularState {
 }
 
 final class Popularsuccess extends PopularState {
-  final List<NowPlayingEntity> popularmovies;
+  final List<MovieEntity> popularmovies;
 
   Popularsuccess(this.popularmovies);
 }
