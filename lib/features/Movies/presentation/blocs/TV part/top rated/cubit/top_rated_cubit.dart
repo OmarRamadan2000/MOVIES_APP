@@ -5,17 +5,31 @@ import 'package:movie_app/features/Movies/domain/use_cases/tv_usecase.dart';
 
 part 'top_rated_state.dart';
 
-class TopRatedCubit extends Cubit<TopRatedState> {
-  TopRatedCubit(this.topRatedTvUseCase) : super(TopRatedInitial());
+class TopRatedTvCubit extends Cubit<TopRatedState> {
+  TopRatedTvCubit(this.topRatedTvUseCase)
+      : super(const TopRatedInitial(topRatedTv: [], topRatedTvpagnation: []));
   final TvUseCase topRatedTvUseCase;
+  int page = 1;
   Future<void> getTopRatedTv() async {
-    emit(TopRatedTvLoding());
-    var result = await topRatedTvUseCase.call();
+    emit(TopRatedTvLoding(
+        topRatedTv: state.topRatedTv,
+        topRatedTvpagnation: state.topRatedTvpagnation));
+    var result = await topRatedTvUseCase.call(pageNumber: page);
 
     result.fold((failure) {
-      emit(TopRatedTvFailure(failure.message));
+      emit(TopRatedTvFailure(failure.message,
+          topRatedTv: state.topRatedTv,
+          topRatedTvpagnation: state.topRatedTvpagnation));
     }, (topRatedTv) {
-      emit(TopRatedTvsuccess(topRatedTv));
+      if (page == 1) {
+        page++;
+        emit(TopRatedTvsuccess(
+            topRatedTv: topRatedTv, topRatedTvpagnation: topRatedTv));
+      } else {
+        page++;
+        emit(TopRatedTvPagnationsuccess(
+            topRatedTv: state.topRatedTv, topRatedTvpagnation: topRatedTv));
+      }
     });
   }
 }

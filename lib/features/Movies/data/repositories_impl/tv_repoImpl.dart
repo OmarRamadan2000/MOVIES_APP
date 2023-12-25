@@ -11,9 +11,10 @@ class TvRepoImpl extends TvRepo {
   TvRepoImpl(this.tvRemoteDataSource);
 
   @override
-  Future<Either<Failure, List<MovieEntity>>> getTvModel() async {
+  Future<Either<Failure, List<MovieEntity>>> getTvModel(
+      {int pageNumber = 1}) async {
     try {
-      var tv = await tvRemoteDataSource.getTv();
+      var tv = await tvRemoteDataSource.getTv(pageNumber: pageNumber);
 
       return right(tv);
     } catch (e) {

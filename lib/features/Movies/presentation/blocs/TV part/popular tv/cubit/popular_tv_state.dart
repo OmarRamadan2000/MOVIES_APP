@@ -1,18 +1,35 @@
 part of 'popular_tv_cubit.dart';
 
 @immutable
-sealed class PopularTvState {}
+sealed class PopularTvState {
+  final List<MovieEntity> popularTv;
+  final List<MovieEntity> popularTvPagnation;
 
-final class PopularTvInitial extends PopularTvState {}
+  PopularTvState({required this.popularTv, required this.popularTvPagnation});
+}
 
-final class PopularTvLoding extends PopularTvState {}
+final class PopularTvInitial extends PopularTvState {
+  PopularTvInitial(
+      {required super.popularTv, required super.popularTvPagnation});
+}
+
+final class PopularTvLoding extends PopularTvState {
+  PopularTvLoding(
+      {required super.popularTv, required super.popularTvPagnation});
+}
 
 final class PopularTvFailure extends PopularTvState {
   final String errMessage;
-  PopularTvFailure(this.errMessage);
+  PopularTvFailure(this.errMessage,
+      {required super.popularTv, required super.popularTvPagnation});
 }
 
 final class PopularTvsuccess extends PopularTvState {
-  final List<MovieEntity> popularTv;
-  PopularTvsuccess(this.popularTv);
+  PopularTvsuccess(
+      {required super.popularTv, required super.popularTvPagnation});
+}
+
+final class PopularTvPagnationsuccess extends PopularTvState {
+  PopularTvPagnationsuccess(
+      {required super.popularTv, required super.popularTvPagnation});
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/features/Movies/domain/entities/movie_entity.dart';
-import 'package:movie_app/features/Movies/presentation/pages/list_cards.dart';
+import 'package:movie_app/features/Movies/presentation/pages/Movies/popular_movies.dart';
+import 'package:movie_app/features/Movies/presentation/pages/Movies/top_rated_movies.dart';
+import 'package:movie_app/features/Movies/presentation/pages/TV/popular_tv.dart';
+import 'package:movie_app/features/Movies/presentation/pages/TV/top_rated_tv.dart';
 import 'package:movie_app/features/Movies/presentation/pages/movie_info.dart';
 import 'package:movie_app/features/Movies/presentation/widgets/component.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -14,6 +17,7 @@ class HorizntalCards extends StatelessWidget {
   final List<MovieEntity> movie;
   final String cateName;
   final bool isMovie;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,20 +32,15 @@ class HorizntalCards extends StatelessWidget {
               const Spacer(),
               InkWell(
                 onTap: () {
-                  navigateTo(
-                      context,
-                      ListCards(
-                        categoryTitle: cateName,
-                        movie: movie,
-                        isMovie: isMovie,
-                      ));
                   PersistentNavBarNavigator.pushNewScreen(
                     context,
-                    screen: ListCards(
-                      categoryTitle: cateName,
-                      movie: movie,
-                      isMovie: isMovie,
-                    ),
+                    screen: (isMovie)
+                        ? (cateName == "Popular")
+                            ? const BuildPopularPagnation()
+                            : const BuildTopRatedpagnation()
+                        : (cateName == "Popular")
+                            ? const BuildPopularTvPagnation()
+                            : const BuildTopRatedTvPagnation(),
                     withNavBar: false,
                     pageTransitionAnimation: PageTransitionAnimation.cupertino,
                   );

@@ -5,12 +5,14 @@ class ApiService {
   final Dio _dio;
   final String baseUrl = AppStrings.baseUrl;
   final String apiKey = AppStrings.apiKey;
+  int pageNumber = 1;
   ApiService(this._dio);
 
-  Future<Map<String, dynamic>> get({required String endPoint}) async {
+  Future<Map<String, dynamic>> get(
+      {required String endPoint, pageNumber}) async {
     var response = await _dio.get('$baseUrl$endPoint', queryParameters: {
       'language': 'en',
-      'page': 1,
+      'page': pageNumber,
       'api_key': apiKey,
     });
 

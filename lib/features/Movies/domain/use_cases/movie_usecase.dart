@@ -8,8 +8,8 @@ class MovieUseCase extends Usecase<List<MovieEntity>> {
   MovieUseCase(this.nowPlayingRepo);
 
   @override
-  Future<Either<Failure, List<MovieEntity>>> call() async {
-    return nowPlayingRepo.getMovieModel();
+  Future<Either<Failure, List<MovieEntity>>> call({int pageNumber = 1}) async {
+    return nowPlayingRepo.getMovieModel(pageNumber: pageNumber);
   }
 }
 

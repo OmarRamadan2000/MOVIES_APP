@@ -11,9 +11,10 @@ class MovieRepoImpl extends MovieRepo {
   MovieRepoImpl(this.movieRemoteDataSource);
 
   @override
-  Future<Either<Failure, List<MovieEntity>>> getMovieModel() async {
+  Future<Either<Failure, List<MovieEntity>>> getMovieModel(
+      {int pageNumber = 1}) async {
     try {
-      var movie = await movieRemoteDataSource.getMovie();
+      var movie = await movieRemoteDataSource.getMovie(pageNumber: pageNumber);
 
       return right(movie);
     } catch (e) {

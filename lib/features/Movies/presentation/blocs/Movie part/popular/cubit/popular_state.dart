@@ -1,20 +1,37 @@
 part of 'popular_cubit.dart';
 
 @immutable
-sealed class PopularState {}
+sealed class PopularState {
+  final List<MovieEntity> popularmoviespagnation;
+  final List<MovieEntity> popularmovies;
 
-final class PopularInitial extends PopularState {}
+  const PopularState(
+      {required this.popularmoviespagnation, required this.popularmovies});
+}
 
-final class PopularLoding extends PopularState {}
+final class PopularInitial extends PopularState {
+  const PopularInitial(
+      {required super.popularmoviespagnation, required super.popularmovies});
+}
+
+final class PopularLoding extends PopularState {
+  const PopularLoding(
+      {required super.popularmoviespagnation, required super.popularmovies});
+}
 
 final class PopularFailure extends PopularState {
   final String errMessage;
 
-  PopularFailure(this.errMessage);
+  const PopularFailure(this.errMessage,
+      {required super.popularmoviespagnation, required super.popularmovies});
+}
+
+final class Popularsuccesspagnation extends PopularState {
+  const Popularsuccesspagnation(
+      {required super.popularmoviespagnation, required super.popularmovies});
 }
 
 final class Popularsuccess extends PopularState {
-  final List<MovieEntity> popularmovies;
-
-  Popularsuccess(this.popularmovies);
+  const Popularsuccess(
+      {required super.popularmoviespagnation, required super.popularmovies});
 }

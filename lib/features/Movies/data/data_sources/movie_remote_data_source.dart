@@ -7,8 +7,9 @@ class MovieRemoteDataSourceImpl {
 
   MovieRemoteDataSourceImpl(this.apiService, this.endpoint);
 
-  Future<List<MovieModel>> getMovie() async {
-    var data = await apiService.get(endPoint: endpoint);
+  Future<List<MovieModel>> getMovie({int pageNumber = 1}) async {
+    var data = await apiService.get(endPoint: endpoint, pageNumber: pageNumber);
+
     List<MovieModel> nowplayinglist = getMovieList(data);
 
     return nowplayinglist;

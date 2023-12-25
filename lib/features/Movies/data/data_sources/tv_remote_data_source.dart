@@ -16,8 +16,8 @@ class TvRemoteDataSourceImpl {
     return list;
   }
 
-  Future<List<TvModel>> getTv() async {
-    var data = await apiService.get(endPoint: endpoint);
+  Future<List<TvModel>> getTv({int pageNumber = 1}) async {
+    var data = await apiService.get(endPoint: endpoint, pageNumber: pageNumber);
     List<TvModel> nowplayinglist = getnowplayinglist(data);
 
     return nowplayinglist;

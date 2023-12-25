@@ -1,23 +1,29 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/core/api/api_service.dart';
 import 'package:movie_app/core/themes/app_themes.dart';
+import 'package:movie_app/core/utils/Funcations/get_it.dart';
 import 'package:movie_app/core/utils/app_strings.dart';
 import 'package:movie_app/core/utils/blocObserver.dart';
-import 'package:movie_app/features/Movies/data/data_sources/movie_remote_data_source.dart';
-import 'package:movie_app/features/Movies/data/repositories_impl/movie_repo_impl.dart';
 import 'package:movie_app/features/Movies/domain/use_cases/movie_usecase.dart';
+import 'package:movie_app/features/Movies/domain/use_cases/tv_usecase.dart';
 import 'package:movie_app/features/Movies/presentation/blocs/Movie%20part/now%20playing/cubit/movie_cubit.dart';
 import 'package:movie_app/features/Movies/presentation/blocs/Movie%20part/popular/cubit/popular_cubit.dart';
 import 'package:movie_app/features/Movies/presentation/blocs/Movie%20part/top%20rated/cubit/top_rated_cubit.dart';
+import 'package:movie_app/features/Movies/presentation/blocs/TV%20part/popular%20tv/cubit/popular_tv_cubit.dart';
+import 'package:movie_app/features/Movies/presentation/blocs/TV%20part/top%20rated/cubit/top_rated_cubit.dart';
 import 'package:movie_app/features/Movies/presentation/pages/home.dart';
+import 'package:get_it/get_it.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
+  getMovieData();
+  getTVData();
   runApp(const MyApp());
 }
+
+final getMovie = GetIt.instance;
+final getTV = GetIt.instance;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -29,34 +35,28 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) {
           return NowPlayingCubit(
-            MovieUseCase(
-              MovieRepoImpl(
-                MovieRemoteDataSourceImpl(
-                    ApiService(Dio()), AppStrings.nowPlaying),
-              ),
-            ),
-          )..getNowPlaying();
+              getMovie.get<MovieUseCase>(param1: AppStrings.nowPlaying))
+            ..getNowPlaying();
         }),
         BlocProvider(create: (context) {
           return PopularCubit(
-            MovieUseCase(
-              MovieRepoImpl(
-                MovieRemoteDataSourceImpl(
-                    ApiService(Dio()), AppStrings.popular),
-              ),
-            ),
-          )..getPopular();
+              getMovie.get<MovieUseCase>(param1: AppStrings.popular))
+            ..getPopular();
         }),
         BlocProvider(create: (context) {
           return TopRatedCubit(
-            MovieUseCase(
-              MovieRepoImpl(
-                MovieRemoteDataSourceImpl(
-                    ApiService(Dio()), AppStrings.topRated),
-              ),
-            ),
-          )..getTopRated();
-        })
+              getMovie.get<MovieUseCase>(param1: AppStrings.topRated))
+            ..getTopRated();
+        }),
+        BlocProvider(
+            create: (context) => PopularTvCubit(
+                getTV.get<TvUseCase>(param1: AppStrings.popularTv))
+              ..getpoplarTv()),
+        BlocProvider(
+          create: (context) => TopRatedTvCubit(
+              getTV.get<TvUseCase>(param1: AppStrings.topRatedTv))
+            ..getTopRatedTv(),
+        )
       ],
       child: MaterialApp(
         title: 'MOVIE APP',

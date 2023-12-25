@@ -10,7 +10,7 @@ class TvUseCase extends Usecase<List<MovieEntity>> {
   TvUseCase(this.tvRepo);
 
   @override
-  Future<Either<Failure, List<MovieEntity>>> call() async {
-    return tvRepo.getTvModel();
+  Future<Either<Failure, List<MovieEntity>>> call({int pageNumber = 1}) async {
+    return tvRepo.getTvModel(pageNumber: pageNumber);
   }
 }

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/utils/app_colors.dart';
 
 ThemeData appTheme() {
   return ThemeData(
     brightness: Brightness.dark,
+    scaffoldBackgroundColor: AppColors.secondary,
     //primarySwatch: MaterialColor(primary, swatch),
     textTheme: const TextTheme(
       bodySmall: TextStyle(
