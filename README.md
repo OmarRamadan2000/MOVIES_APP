@@ -1,16 +1,16 @@
 # movie_app
 
-A new Flutter project.
+Utilizing the Flutter framework, I integrated the TMDB API to provide users with a
+rich repository of movie and TV show data. Employing the BLoC state management
+pattern and adhering to the Clean Architecture principles, the app is characterized
+by an intuitive user interface,scalable and maintainable codebases.
 
-## Getting Started
+Application features:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Bloc state management (cubit)
+Clean Architecture 
+TMDB api
+Dio package
+Solid principles
+Dependency injection
+[Figma UI Design]([https://docs.flutter.dev/get-started/codelab](https://www.figma.com/file/nyVhlMVONU2OZJLvUuomTI/Flutter-Clean-Architecture?type=whiteboard&node-id=228-41&t=5DFz8MKpsuOmPNXm-0)https://www.figma.com/file/nyVhlMVONU2OZJLvUuomTI/Flutter-Clean-Architecture?type=whiteboard&node-id=228-41&t=5DFz8MKpsuOmPNXm-0)
