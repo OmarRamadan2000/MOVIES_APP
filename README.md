@@ -35,3 +35,4 @@ by an intuitive user interface,scalable and maintainable codebases.
 <picture>
   <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://github.com/OmarRamadan2000/MOVIES_APP/assets/153917045/903e291f-3062-4336-ada1-e82021317563" width="280">
 </picture>
+<img src="https://t.bkit.co/w_658e51878a188.gif" />
