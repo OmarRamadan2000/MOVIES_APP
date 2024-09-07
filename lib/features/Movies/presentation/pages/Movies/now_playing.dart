@@ -5,8 +5,8 @@ import 'package:movie_app/core/utils/app_colors.dart';
 import 'package:movie_app/core/utils/app_strings.dart';
 import 'package:movie_app/features/Movies/domain/entities/movie_entity.dart';
 import 'package:movie_app/features/Movies/presentation/pages/movie_info.dart';
+import 'package:movie_app/features/Movies/presentation/widgets/component.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import 'package:shimmer/shimmer.dart';
 
 class NowPlayingWidget extends StatelessWidget {
   const NowPlayingWidget({
@@ -44,17 +44,9 @@ class NowPlayingWidget extends StatelessWidget {
                             ? ""
                             : AppStrings.image + e.backdrop_path!,
                         placeholder: (context, url) {
-                          return Center(
-                              child: SizedBox(
-                            child: Center(
-                              child: Shimmer.fromColors(
-                                  baseColor: Colors.grey,
-                                  highlightColor: Colors.grey,
-                                  child: const Card(
-                                    color: Colors.white,
-                                  )),
-                            ),
-                          ));
+                          return ShimmerImage(
+                              hight: MediaQuery.of(context).size.height * .35,
+                              width: double.infinity);
                         },
                         errorWidget: (context, url, error) =>
                             const Center(child: Icon(Icons.error)),

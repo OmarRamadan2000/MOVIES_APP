@@ -50,8 +50,9 @@ class MovieInfo extends StatelessWidget {
                 width: double.infinity,
                 fit: BoxFit.fill,
                 imageUrl: AppStrings.image + movie.backdrop_path!,
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
+                placeholder: (context, url) => ShimmerImage(
+                    hight: MediaQuery.of(context).size.height * 0.35,
+                    width: double.infinity),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
               Padding(
@@ -92,12 +93,17 @@ class MovieInfo extends StatelessWidget {
                               .titleSmall!
                               .copyWith(color: AppColors.grey2),
                         ),
-                        Text(
-                          generes.substring(0, generes.length - 1),
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleSmall!
-                              .copyWith(color: AppColors.grey2),
+                        Expanded(
+                          child: Text(
+                            generes.substring(0, generes.length - 1),
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleSmall!
+                                .copyWith(
+                                  color: AppColors.grey2,
+                                ),
+                            maxLines: 2,
+                          ),
                         ),
                       ],
                     ),

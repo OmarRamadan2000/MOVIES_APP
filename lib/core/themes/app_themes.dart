@@ -5,7 +5,6 @@ ThemeData appTheme() {
   return ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: AppColors.secondary,
-    //primarySwatch: MaterialColor(primary, swatch),
     textTheme: const TextTheme(
       bodySmall: TextStyle(
           color: Colors.white, fontWeight: FontWeight.w400, fontSize: 14),

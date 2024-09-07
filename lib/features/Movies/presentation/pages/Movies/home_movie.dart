@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/core/utils/app_colors.dart';
 import 'package:movie_app/features/Movies/domain/entities/movie_entity.dart';
 import 'package:movie_app/features/Movies/domain/use_cases/movie_usecase.dart';
 import 'package:movie_app/features/Movies/presentation/blocs/Movie%20part/now%20playing/cubit/movie_cubit.dart';
@@ -8,7 +7,7 @@ import 'package:movie_app/features/Movies/presentation/blocs/Movie%20part/simila
 import 'package:movie_app/features/Movies/presentation/pages/Movies/popular_movies.dart';
 import 'package:movie_app/features/Movies/presentation/pages/Movies/top_rated_movies.dart';
 import 'package:movie_app/features/Movies/presentation/widgets/component.dart';
-import 'package:movie_app/features/Movies/presentation/widgets/now_playing.dart';
+import 'package:movie_app/features/Movies/presentation/pages/Movies/now_playing.dart';
 import 'package:movie_app/main.dart';
 
 class HomeMovie extends StatelessWidget {
@@ -16,29 +15,27 @@ class HomeMovie extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SingleChildScrollView(
-        child: Container(
-          color: AppColors.secondary,
-          child: const Column(
-            children: [
-              BuildNowPlayingWidget(),
-              SizedBox(
-                height: 20,
-              ),
-              BuildPopularWidget(),
-              SizedBox(
-                height: 15,
-              ),
-              BuildTopRatedWidget(),
-              SizedBox(
-                height: 15,
-              ),
-            ],
-          ),
+    return const SafeArea(
+        child: Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            BuildNowPlayingWidget(),
+            SizedBox(
+              height: 20,
+            ),
+            BuildPopularWidget(),
+            SizedBox(
+              height: 15,
+            ),
+            BuildTopRatedWidget(),
+            SizedBox(
+              height: 15,
+            ),
+          ],
         ),
       ),
-    );
+    ));
   }
 }
 
@@ -88,10 +85,12 @@ class BulidSimilarMovie extends StatelessWidget {
             final List<MovieEntity> movies = state.similarmovies;
             movies.removeWhere((element) =>
                 element.posterTv == null || element.posterTv == null);
-            return GridImage(
-              movies: movies,
-              isMovie: isMovie,
-            );
+            return movies.isNotEmpty
+                ? GridImage(
+                    movies: movies,
+                    isMovie: isMovie,
+                  )
+                : const SizedBox();
           }
           if (state is SimilarFailure) {
             return Text(state.errMessage);

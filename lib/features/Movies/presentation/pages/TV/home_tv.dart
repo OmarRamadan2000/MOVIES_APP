@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/core/utils/app_colors.dart';
 import 'package:movie_app/core/utils/app_strings.dart';
 import 'package:movie_app/features/Movies/domain/entities/movie_entity.dart';
 import 'package:movie_app/features/Movies/domain/use_cases/tv_usecase.dart';
@@ -9,7 +8,7 @@ import 'package:movie_app/features/Movies/presentation/blocs/TV%20part/similar/c
 import 'package:movie_app/features/Movies/presentation/pages/TV/popular_tv.dart';
 import 'package:movie_app/features/Movies/presentation/pages/TV/top_rated_tv.dart';
 import 'package:movie_app/features/Movies/presentation/widgets/component.dart';
-import 'package:movie_app/features/Movies/presentation/widgets/now_playing.dart';
+import 'package:movie_app/features/Movies/presentation/pages/Movies/now_playing.dart';
 import 'package:movie_app/main.dart';
 
 class HomeTv extends StatelessWidget {
@@ -17,29 +16,24 @@ class HomeTv extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SingleChildScrollView(
-        child: Container(
-          color: AppColors.secondary,
-          child: const Column(
-            children: [
-              BuildOnTheAir(),
-              SizedBox(
-                height: 20,
-              ),
-              BuildPopularTv(),
-              SizedBox(
-                height: 15,
-              ),
-              BuildTopRatedTv(),
-              SizedBox(
-                height: 15,
-              ),
-            ],
-          ),
+    return const SafeArea(
+        child: Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            BuildOnTheAir(),
+            SizedBox(
+              height: 20,
+            ),
+            BuildPopularTv(),
+            SizedBox(
+              height: 15,
+            ),
+            BuildTopRatedTv(),
+          ],
         ),
       ),
-    );
+    ));
   }
 }
 
@@ -94,10 +88,12 @@ class BuildSimilarTv extends StatelessWidget {
                 final List<MovieEntity> tv = state.similarTv;
                 tv.removeWhere((element) =>
                     element.backdrop_path == null || element.posterTv == null);
-                return GridImage(
-                  movies: tv,
-                  isMovie: isMovie,
-                );
+                return tv.isNotEmpty
+                    ? GridImage(
+                        movies: tv,
+                        isMovie: isMovie,
+                      )
+                    : const SizedBox();
               }
               if (state is SimilarTvFailure) {
                 return Text(state.errMessage);

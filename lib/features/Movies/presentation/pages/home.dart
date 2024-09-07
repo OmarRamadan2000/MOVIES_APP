@@ -10,6 +10,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.red,
       body: PersistentTabView(
         hideNavigationBar: false,
         backgroundColor: AppColors.secondary,

@@ -5,6 +5,7 @@ import 'package:movie_app/core/utils/app_strings.dart';
 import 'package:movie_app/features/Movies/domain/entities/movie_entity.dart';
 import 'package:movie_app/features/Movies/presentation/pages/movie_info.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:shimmer/shimmer.dart';
 
 class RateRow extends StatelessWidget {
   const RateRow(
@@ -79,6 +80,24 @@ class GridImage extends StatelessWidget {
   }
 }
 
+class ShimmerImage extends StatelessWidget {
+  const ShimmerImage({super.key, required this.hight, required this.width});
+  final double hight;
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return Shimmer.fromColors(
+        baseColor: Colors.grey[500]!,
+        highlightColor: Colors.grey[400]!,
+        child: Container(
+          height: hight,
+          width: width,
+          color: Colors.grey,
+        ));
+  }
+}
+
 Widget squareImage(
   String imagePath,
 ) {
@@ -89,7 +108,7 @@ Widget squareImage(
       width: 90,
       fit: BoxFit.fill,
       imageUrl: AppStrings.image + imagePath,
-      placeholder: (context, url) => const CircularProgressIndicator(),
+      placeholder: (context, url) => const ShimmerImage(hight: 130, width: 90),
       errorWidget: (context, url, error) => const Icon(Icons.error),
     ),
   );
